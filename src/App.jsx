@@ -1,11 +1,8 @@
 
+import AlbumBook from "./pages/AlbumBook";
 
 function App() {
-  return (
-    <>
-      <div>hola</div>
-    </>
-  )
+  return <AlbumBook />;
 }
 
-export default App
+export default App;
