@@ -2,7 +2,12 @@
 import AlbumBook from "./pages/AlbumBook";
 
 function App() {
-  return <AlbumBook />;
+  return (
+  <>
+
+  <AlbumBook />;
+  </>
+  )
 }
 
 export default App;

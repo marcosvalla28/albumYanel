@@ -9,7 +9,7 @@ const BookPage = forwardRef(({ image, text }, ref) => {
       <div className="w-full h-full flex flex-col">
         
         {/* FOTO */}
-        <div className="flex-1 overflow-hidden rounded-2xl shadow-lg bg-gray-200">
+        <div className="flex-1 overflow-hidden rounded-2xl shadow-lg bg-blue-200">
           <img
             src={image}
             alt="memory"
