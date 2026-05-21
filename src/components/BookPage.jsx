@@ -1,4 +1,7 @@
 import { forwardRef } from "react";
+import paperBg from "../assets/imagenBG.jpeg";
+
+
 
 const BookPage = forwardRef(({ image, text }, ref) => {
   return (

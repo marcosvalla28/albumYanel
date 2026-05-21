@@ -24,7 +24,7 @@ const pages = [
 
 const Book = () => {
   return (
-    <div className="w-full min-h-screen bg-[#d6d0c4] flex items-center justify-center overflow-hidden bg-black">
+    <div className="w-full min-h-screen bg-[#d6d0c4] flex items-center justify-center overflow-hidden ">
       <HTMLFlipBook
         width={500}
         height={700}
