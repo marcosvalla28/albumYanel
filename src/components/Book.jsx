@@ -1,5 +1,7 @@
 import HTMLFlipBook from "react-pageflip";
 import BookPage from "./BookPage";
+import fondoAlbum from "../estilos/Album.css";
+
 
 const pages = [
   {
@@ -24,7 +26,7 @@ const pages = [
 
 const Book = () => {
   return (
-    <div className="w-full min-h-screen bg-[#d6d0c4] flex items-center justify-center overflow-hidden ">
+    <div className="w-full min-h-screen fondoAlbum flex items-center justify-center overflow-hidden ">
       <HTMLFlipBook
         width={500}
         height={700}
