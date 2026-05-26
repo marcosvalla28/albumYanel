@@ -1,7 +1,6 @@
 import HTMLFlipBook from "react-pageflip";
 import BookPage from "./BookPage";
-import fondoAlbum from "../estilos/Album.css";
-
+import "../estilos/Album.css";
 
 const pages = [
   {
@@ -42,7 +41,6 @@ const Book = () => {
           />
         ))}
       </HTMLFlipBook>
-
       
     </div>
   );

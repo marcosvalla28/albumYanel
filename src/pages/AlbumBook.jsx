@@ -1,7 +1,7 @@
 import Book from "../components/Book";
 
 const AlbumBook = () => {
-  return <Book />;
+  return <Book />
 };
 
 export default AlbumBook;
