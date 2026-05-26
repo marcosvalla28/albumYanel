@@ -1,34 +1,39 @@
 import HTMLFlipBook from "react-pageflip";
 import BookPage from "./BookPage";
 import "../estilos/Album.css";
+import { foto1, foto2, foto3, foto4, foto5, foto6, foto7  } from "../assets/imgAlbum/imagenes";  
 
 const pages = [
   {
     id: 1,
     image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+      foto1,
     text: "Nuestro primer viaje juntos 🌅",
   },
   {
     id: 2,
     image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+      foto2,
     text: "Un recuerdo que nunca vamos a olvidar ❤️",
   },
   {
     id: 3,
     image:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1",
+      foto3,
     text: "Cada foto guarda una historia ✨",
   },
 ];
 
+
+const width = Math.min(window.innerWidth * 0.8, 500);
+const height = width * 1.4;
+
 const Book = () => {
   return (
-    <div className="w-full min-h-screen fondoAlbum flex items-center justify-center overflow-hidden ">
+    <div className="w-full min-h-screen fondoAlbum flex items-center justify-center overflow-hidden p-4">
       <HTMLFlipBook
-        width={500}
-        height={700}
+        width={width}
+        height={height}
         showCover={true}
         mobileScrollSupport={true}
         className="shadow-2xl"
