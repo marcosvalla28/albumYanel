@@ -1,7 +1,13 @@
 import Book from "../components/Book";
+import Navbar from "../components/Navbar";
 
 const AlbumBook = () => {
-  return <Book />
+  return (
+    <div>
+    <Navbar />
+    <Book />
+    </div>
+  ) 
 };
 
 export default AlbumBook;

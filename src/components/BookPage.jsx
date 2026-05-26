@@ -3,7 +3,8 @@ import paperBg from "../assets/imagenBG.jpeg";
 
 
 
-const BookPage = forwardRef(({ image, text }, ref) => {
+
+const BookPage = forwardRef(({ image, text, imageStyle}, ref) => {
   return (
     <div
       ref={ref}
@@ -16,6 +17,7 @@ const BookPage = forwardRef(({ image, text }, ref) => {
           <img
             src={image}
             alt="memory"
+            style={imageStyle || {}}
             className="w-full h-full object-cover"
           />
         </div>

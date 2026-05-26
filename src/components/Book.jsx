@@ -1,7 +1,7 @@
 import HTMLFlipBook from "react-pageflip";
 import BookPage from "./BookPage";
 import "../estilos/Album.css";
-import { foto1, foto2, foto3, foto4, foto5, foto6, foto7  } from "../assets/imgAlbum/imagenes";  
+import { foto1, foto10, foto11, foto12, foto13, foto2, foto3, foto4, foto5, foto6, foto7, foto8, foto9  } from "../assets/imgAlbum/imagenes";  
 
 const pages = [
   {
@@ -20,6 +20,67 @@ const pages = [
     id: 3,
     image:
       foto3,
+    text: "Cada foto guarda una historia ✨",
+  },
+    {
+    id: 4,
+    image:
+      foto4,
+    text: "Cada foto guarda una historia ✨",
+  },
+    {
+    id: 5,
+    image:
+      foto5,
+    text: "Cada foto guarda una historia ✨",
+  },
+    {
+    id: 6,
+    image:
+      foto6,
+    text: "Cada foto guarda una historia ✨",
+  },
+    {
+    id: 7,
+    image:
+      foto7,
+    imageStyle: { objectPosition: "top center", objectFit: "contain" },
+      text: "Cada foto guarda una historia ✨",
+  },
+    {
+    id: 8,
+    image:
+      foto8,
+    text: "Cada foto guarda una historia ✨",
+  },
+    {
+    id: 9,
+    image:
+      foto9,
+    text: "Cada foto guarda una historia ✨",
+  },
+    {
+    id: 10,
+    image:
+      foto10,
+    text: "Cada foto guarda una historia ✨",
+  },
+    {
+    id: 11,
+    image:
+      foto11,
+    text: "Cada foto guarda una historia ✨",
+  },
+    {
+    id: 12,
+    image:
+      foto12,
+    text: "Cada foto guarda una historia ✨",
+  },
+    {
+    id: 13,
+    image:
+      foto13,
     text: "Cada foto guarda una historia ✨",
   },
 ];
