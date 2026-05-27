@@ -1,4 +1,5 @@
 import Book from "../components/Book";
+import MusicPlayer from "../components/MusicPlayer";
 import Navbar from "../components/Navbar";
 
 const AlbumBook = () => {
@@ -6,6 +7,7 @@ const AlbumBook = () => {
     <div>
     <Navbar />
     <Book />
+    <MusicPlayer />
     </div>
   ) 
 };

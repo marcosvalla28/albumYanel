@@ -44,7 +44,7 @@ const pages = [
     id: 7,
     image:
       foto7,
-    imageStyle: { objectPosition: "top center", objectFit: "contain" },
+    imageStyle: { objectPosition: "top center", objectFit: "contain"},
       text: "Cada foto guarda una historia ✨",
   },
     {
