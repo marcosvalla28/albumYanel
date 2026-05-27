@@ -104,7 +104,7 @@ const anterior = () => {
     )}
 
       {/* Contenedor flotante fijo abajo */}
-      <div className={`fixed bottom-5 left-1/2 -translate-x-1/2 z-50 w-[340px] sm:w-[420px] ${visible ? "block" : "hidden"}`}>
+      <div className={`fixed bottom-5 left-1/2 -translate-x-1/2 z-50 w-85 sm:w-105 ${visible ? "block" : "hidden"}`}>
         <div className="relative bg-black/70 backdrop-blur-xl border border-white/10 rounded-2xl px-5 py-4 shadow-2xl">
  
           {/* Botón cerrar */}
@@ -119,7 +119,7 @@ const anterior = () => {
           {/* Info de la canción */}
           <div className="flex items-center gap-3 mb-3">
             {/* Ícono animado */}
-            <div className={`flex-shrink-0 w-10 h-10 rounded-xl bg-amber-400/20 border border-amber-400/30 flex items-center justify-center ${playing ? "animate-pulse" : ""}`}>
+            <div className={`shrink-0 w-10 h-10 rounded-xl bg-amber-400/20 border border-amber-400/30 flex items-center justify-center ${playing ? "animate-pulse" : ""}`}>
               <span className="text-amber-400 text-lg">♪</span>
             </div>
             <div className="overflow-hidden">
