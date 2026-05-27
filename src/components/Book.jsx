@@ -1,9 +1,16 @@
 import HTMLFlipBook from "react-pageflip";
 import BookPage from "./BookPage";
 import "../estilos/Album.css";
-import { foto1, foto10, foto11, foto12, foto13, foto2, foto3, foto4, foto5, foto6, foto7, foto8, foto9  } from "../assets/imgAlbum/imagenes";  
+import { foto1, foto10, foto11, foto12, foto13, foto2, foto3, foto4, foto5, foto6, foto7, foto8, foto9, tapa } from "../assets/imgAlbum/imagenes";  
 
 const pages = [
+  {
+    id: 0,
+    image:
+      tapa,
+      imageStyle: { objectPosition: "top center", objectFit: "contain", className: "p-0"},
+    text: "",
+  },
   {
     id: 1,
     image:
@@ -104,6 +111,7 @@ const Book = () => {
             key={page.id}
             image={page.image}
             text={page.text}
+            imageStyle={page.imageStyle}
           />
         ))}
       </HTMLFlipBook>

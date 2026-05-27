@@ -25,8 +25,8 @@ export default function Navbar({ onLogin, onHome, onLogout }) {
       <nav className="fixed top-0 left-0 w-full z-50 h-16 flex items-center justify-between px-6 bg-black/80 backdrop-blur-md border-b border-white/10">
         
         {/* Logo */}
-        <a href="/" className="font-serif text-xl tracking-widest text-white uppercase select-none">
-          Book<span className="text-amber-400">.</span>folio
+        <a href="/" className="flex items-start">
+          <img src="/src/assets/logo/logo.png" alt="Logo" className="w-25" />
         </a>
 
         {/* Botón hamburguesa */}
