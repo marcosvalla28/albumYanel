@@ -8,8 +8,8 @@ const pages = [
     id: 0,
     image:
       tapa,
-      imageStyle: { objectPosition: "top center", objectFit: "contain", className: "p-0"},
-    text: "",
+      imageStyle: { objectPosition: "top center", objectFit: "contain"},
+      noPadding: true,
   },
   {
     id: 1,
@@ -98,13 +98,13 @@ const height = width * 1.4;
 
 const Book = () => {
   return (
-    <div className="w-full min-h-screen fondoAlbum flex items-center justify-center overflow-hidden p-4">
+    <div className="w-full min-h-screen fondoAlbum flex items-center justify-center overflow-hidden p-4 ">
       <HTMLFlipBook
         width={width}
         height={height}
         showCover={true}
         mobileScrollSupport={true}
-        className="shadow-2xl"
+        className="shadow-2xl "
       >
         {pages.map((page) => (
           <BookPage
@@ -112,6 +112,7 @@ const Book = () => {
             image={page.image}
             text={page.text}
             imageStyle={page.imageStyle}
+            noPadding={page.noPadding}
           />
         ))}
       </HTMLFlipBook>
