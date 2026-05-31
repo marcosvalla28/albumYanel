@@ -12,5 +12,6 @@ import foto11 from "./img11.jpeg";
 import foto12 from "./img12.jpeg";
 import foto13 from "./img13.jpeg";
 import tapa from "./tapaAlbum.png";
+import corazon1 from "../logo/corazon1.jpg";
 
-export { foto1, foto2, foto3, foto4, foto5, foto6, foto7, foto8, foto9, foto10, foto11, foto12, foto13, tapa };
+export { foto1, foto2, foto3, foto4, foto5, foto6, foto7, foto8, foto9, foto10, foto11, foto12, foto13, tapa, corazon1 };

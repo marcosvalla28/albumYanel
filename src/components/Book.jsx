@@ -15,25 +15,25 @@ const pages = [
     id: 1,
     image:
       foto1,
-    text: "Nuestro primer viaje juntos 🌅",
+    text: "Entonces te das cuenta que no es quien te mueve el piso, sino quiente centra 💕",
   },
   {
     id: 2,
     image:
       foto2,
-    text: "Un recuerdo que nunca vamos a olvidar ❤️",
+    text: "No es quien te robe el corazon, sino quien te hace sentir que lo tienes de vuelta💖",
   },
   {
     id: 3,
     image:
       foto3,
-    text: "Cada foto guarda una historia ✨",
+    text: "Mi tactica es mirarte, aprender como sos, quererte como sos 💘",
   },
     {
     id: 4,
     image:
       foto4,
-    text: "Cada foto guarda una historia ✨",
+    text: "",
   },
     {
     id: 5,
