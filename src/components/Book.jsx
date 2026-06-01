@@ -88,6 +88,7 @@ const pages = [
     id: 13,
     image:
       foto13,
+      imageStyle: { objectPosition: "center 20%"},
     text: "Cada foto guarda una historia ✨",
   },
 ];
