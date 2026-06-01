@@ -1,11 +1,11 @@
-import { corazon1 } from "../assets/imgAlbum/imagenes";
+import { corazon1, corazon2} from "../assets/imgAlbum/imagenes";
 
 
 
 
 function EfectoLluvia() {
 
-    const notes = [corazon1];
+    const notes = [corazon1, corazon2];
 
 
   return (
