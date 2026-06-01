@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
+    "@tsparticles/react": "^4.1.2",
+    "@tsparticles/slim": "^4.1.2",
     "date-fns": "^4.2.1",
     "firebase": "^12.13.0",
     "framer-motion": "^12.39.0",
