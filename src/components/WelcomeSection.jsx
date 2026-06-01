@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function WelcomeSection() {
   return (
-    <main className="flex justify-center items-center px-6 py-10 font-sans">
+    <main className="flex justify-center items-center px-6 py-10 font-sans mt-7">
       <div className="relative max-w-xl w-full bg-zinc-900/80 border border-[#aa7e35]/80 rounded-2xl px-10 py-12 text-center overflow-hidden">
 
         

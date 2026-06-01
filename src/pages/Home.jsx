@@ -9,10 +9,7 @@ const Home = () => {
   return (
     <div>
       <EfectoLluvia />
-      <Navbar 
-      onHome={() => navigate("/")}
-      />
-      <WelcomeSection className="mt-96" />
+      <WelcomeSection  />
     </div>
   )
 }

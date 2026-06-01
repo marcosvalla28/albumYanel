@@ -1,18 +1,28 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import Home from '../pages/Home'
 import AlbumBook from '../pages/AlbumBook'
-/* import AdminPanel from '../pages/AdminPanel' */
-/* import Login from '../pages/login' */
+import Navbar from '../components/Navbar' // ajustá el path
+
+function Layout() {
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <Navbar
+        onHome={() => navigate("/")}
+        onLogin={() => navigate("/login")}
+        onLogout={() => navigate("/")}
+      />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/album" element={<AlbumBook />} />
+      </Routes>
+    </>
+  );
+}
 
 const AppRouter = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/album" element={<AlbumBook />} />
-      {/* <Route path="/login" element={<Login />} /> */}
-      {/* <Route path="/admin" element={<AdminPanel />} /> */}
-    </Routes>
-  )
+  return <Layout />
 }
 
 export default AppRouter
