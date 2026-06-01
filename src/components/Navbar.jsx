@@ -36,9 +36,9 @@ export default function Navbar({ onLogin, onHome, onLogout }) {
           aria-expanded={isOpen}
           className="flex flex-col justify-center gap-1.5 w-9 h-9 p-1 z-50 relative"
         >
-          <span className={`block h-px bg-white rounded transition-all duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block h-px bg-white rounded transition-all duration-300 ease-in-out ${isOpen ? "opacity-0 w-0" : "w-full"}`} />
-          <span className={`block h-px bg-white rounded transition-all duration-300 ease-in-out ${isOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          <span className={`block h-px bg-white rounded transition-all duration-300 ease-in-out hover:bg-[#aa7e35] ${isOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`block h-px bg-white rounded transition-all duration-300 ease-in-out hover:bg-[#aa7e35] ${isOpen ? "opacity-0 w-0" : "w-full"}`} />
+          <span className={`block h-px bg-white rounded transition-all duration-300 ease-in-out hover:bg-[#aa7e35] ${isOpen ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
       </nav>
 
@@ -50,16 +50,16 @@ export default function Navbar({ onLogin, onHome, onLogout }) {
       />
 
       {/* Drawer */}
-      <aside
-        className={`fixed top-0 right-0 h-full w-72 z-50 bg-neutral-950 border-l border-white/10 flex flex-col pt-20 pb-10 transition-transform duration-400 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"}`}
-        aria-hidden={!isOpen}
-      >
+              <aside
+          className={`fixed top-0 right-0 h-full w-72 z-50 bg-neutral-950 border-l border-white/10 flex flex-col pt-20 pb-10 transition-transform duration-400 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+          inert={!isOpen ? "" : undefined}
+        >
         {/* Items principales */}
         <ul className="flex flex-col px-6 flex-1">
           <li className={`border-b border-white/10 transition-all duration-300 ${isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-5"}`} style={{ transitionDelay: isOpen ? "80ms" : "0ms" }}>
             <button
               onClick={() => handleAction(onHome)}
-              className="flex items-center gap-3 w-full py-4 text-sm tracking-widest uppercase text-neutral-400 hover:text-amber-400 transition-colors duration-200 text-left"
+              className="flex items-center gap-3 w-full py-4 text-sm tracking-widest uppercase text-neutral-400 hover:text-[#aa7e35] transition-colors duration-200 text-left"
             >
               <span>⌂</span> Volver a Home
             </button>
@@ -68,7 +68,7 @@ export default function Navbar({ onLogin, onHome, onLogout }) {
           <li className={`border-b border-white/10 transition-all duration-300 ${isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-5"}`} style={{ transitionDelay: isOpen ? "140ms" : "0ms" }}>
             <button
               onClick={() => handleAction(onLogin)}
-              className="flex items-center gap-3 w-full py-4 text-sm tracking-widest uppercase text-neutral-400 hover:text-amber-400 transition-colors duration-200 text-left"
+              className="flex items-center gap-3 w-full py-4 text-sm tracking-widest uppercase text-neutral-400 hover:text-[#aa7e35] transition-colors duration-200 text-left"
             >
               <span>→</span> Iniciar Sesión
             </button>
@@ -89,11 +89,3 @@ export default function Navbar({ onLogin, onHome, onLogout }) {
   );
 }
 
-/*
-  USO:
-  <Navbar
-    onHome={() => navigate("/")}
-    onLogin={() => navigate("/login")}
-    onLogout={() => cerrarSesion()}
-  />
-*/
