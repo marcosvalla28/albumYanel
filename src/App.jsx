@@ -1,14 +1,8 @@
 
-import AlbumBook from "./pages/AlbumBook";
-import Home from "./pages/Home";
+import AppRouter from "./routes/AppRouter";
 
 function App() {
-  return (
-  <>
-  {/* <AlbumBook /> */}
-  <Home />
-  </>
-  )
+  return <AppRouter />
 }
 
 export default App;
