@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import logo from "../assets/logo/logo.png";
+
 
 export default function Navbar({ onLogin, onHome, onLogout }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +28,7 @@ export default function Navbar({ onLogin, onHome, onLogout }) {
         
         {/* Logo */}
         <a href="/" className="flex items-start">
-          <img src="/src/assets/logo/logo.png" alt="Logo" className="w-25" />
+          <img src={logo} alt="Logo" className="w-25" />
         </a>
 
         {/* Botón hamburguesa */}

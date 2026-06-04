@@ -15,7 +15,7 @@ const pages = [
     id: 1,
     image:
       foto1,
-    text: "Entonces te das cuenta que no es quien te mueve el piso, sino quiente centra 💕",
+    text: " Entonces te das cuenta que no es quien te mueve el piso, sino quiente centra 💕",
   },
   {
     id: 2,
@@ -33,62 +33,63 @@ const pages = [
     id: 4,
     image:
       foto4,
-    text: "",
+    text: "Mi tactica es hablarte y escucharte, contruir un puente indestructible 💘",
   },
     {
     id: 5,
     image:
       foto5,
-    text: "Cada foto guarda una historia ✨",
+    text: "tu tienes lo que busco, lo que deseo, lo que amo, tu lo tienes 😍",
   },
     {
     id: 6,
     image:
       foto6,
-    text: "Cada foto guarda una historia ✨",
+    text: "Eres la casualidad más bonita que llegó a mi vida 💖",
   },
     {
     id: 7,
     image:
       foto7,
     imageStyle: { objectPosition: "top center", objectFit: "contain"},
-      text: "Cada foto guarda una historia ✨",
+      text: "Podra nublarse el sol eternamente, podra secarse el mar, podra romperse el eje de la tierra como un débil cristal, pero jamás en mi vida podrá apagarse la llama de tu amor 💖",
   },
     {
     id: 8,
     image:
       foto8,
-    text: "Cada foto guarda una historia ✨",
+    text: "",
   },
     {
     id: 9,
     image:
       foto9,
-    text: "Cada foto guarda una historia ✨",
+    text: "",
   },
     {
     id: 10,
     image:
       foto10,
-    text: "Cada foto guarda una historia ✨",
+    text: "",
   },
     {
     id: 11,
     image:
       foto11,
-    text: "Cada foto guarda una historia ✨",
+    text: "",
   },
     {
     id: 12,
     image:
       foto12,
-    text: "Cada foto guarda una historia ✨",
+    text: "",
   },
     {
     id: 13,
     image:
       foto13,
-    text: "Cada foto guarda una historia ✨",
+      imageStyle: { objectPosition: "center 20%"},
+    text: "",
   },
 ];
 
