@@ -112,6 +112,7 @@ const Book = () => {
         id: d.id,
         image: d.data().url,
         text: d.data().descripcion || "",
+        imageStyle: {objectPosition: "center 20%"},
       }));
       setFirebasePages(fotos);
       setLoading(false);

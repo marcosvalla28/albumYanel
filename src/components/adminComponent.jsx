@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { signOut } from "firebase/auth";
-import { auth, db, storage } from "../config/firebase";
+import { auth, db } from "../config/firebase";
 import {
   collection,
   addDoc,
@@ -11,13 +11,10 @@ import {
   orderBy,
   query,
 } from "firebase/firestore";
-import {
-  ref,
-  uploadBytesResumable,
-  getDownloadURL,
-  deleteObject,
-} from "firebase/storage";
 import Swal from "sweetalert2";
+
+const CLOUDINARY_CLOUD_NAME = "drvmacqrk";
+const CLOUDINARY_UPLOAD_PRESET = "album_fotos";
 
 export default function AdminComponent() {
   const [photos, setPhotos] = useState([]);
@@ -59,46 +56,58 @@ export default function AdminComponent() {
     setProgress(0);
 
     try {
-      const fileName = `photos/${Date.now()}_${selectedFile.name}`;
-      const storageRef = ref(storage, fileName);
-      const uploadTask = uploadBytesResumable(storageRef, selectedFile);
+      // Subir imagen a Cloudinary
+      const formData = new FormData();
+      formData.append("file", selectedFile);
+      formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
 
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {
-          const pct = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-          setProgress(pct);
-        },
-        () => {
-          Swal.fire({ icon: "error", title: "Error al subir", text: "Intentá de nuevo.", confirmButtonColor: "#aa7e35" });
-          setUploading(false);
-        },
-        async () => {
-          const url = await getDownloadURL(uploadTask.snapshot.ref);
-          await addDoc(collection(db, "photos"), {
-            url,
-            descripcion: descripcion || "",
-            storagePath: fileName,
-            createdAt: serverTimestamp(),
-          });
-          setSelectedFile(null);
-          setPreview(null);
-          setDescripcion("");
-          setProgress(0);
-          fileInputRef.current.value = "";
-          setUploading(false);
-          fetchPhotos();
-          Swal.fire({
-            icon: "success",
-            title: "Foto subida",
-            timer: 1500,
-            showConfirmButton: false,
-          });
-        }
+      // Simular progreso mientras sube
+      const progressInterval = setInterval(() => {
+        setProgress((prev) => (prev < 90 ? prev + 10 : prev));
+      }, 200);
+
+      const response = await fetch(
+        `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`,
+        { method: "POST", body: formData }
       );
+
+      clearInterval(progressInterval);
+
+      if (!response.ok) {
+        throw new Error("Error al subir a Cloudinary");
+      }
+
+      const data = await response.json();
+      const url = data.secure_url;
+      const cloudinaryId = data.public_id;
+
+      setProgress(100);
+
+      // Guardar URL + descripción en Firestore
+      await addDoc(collection(db, "photos"), {
+        url,
+        cloudinaryId,
+        descripcion: descripcion || "",
+        createdAt: serverTimestamp(),
+      });
+
+      setSelectedFile(null);
+      setPreview(null);
+      setDescripcion("");
+      setProgress(0);
+      fileInputRef.current.value = "";
+      setUploading(false);
+      fetchPhotos();
+      Swal.fire({
+        icon: "success",
+        title: "Foto subida",
+        timer: 1500,
+        showConfirmButton: false,
+      });
     } catch {
       Swal.fire({ icon: "error", title: "Error inesperado", text: "Intentá de nuevo.", confirmButtonColor: "#aa7e35" });
       setUploading(false);
+      setProgress(0);
     }
   };
 
@@ -116,10 +125,8 @@ export default function AdminComponent() {
     if (!result.isConfirmed) return;
 
     try {
+      // Solo borramos de Firestore (borrar de Cloudinary requiere backend)
       await deleteDoc(doc(db, "photos", photo.id));
-      if (photo.storagePath) {
-        await deleteObject(ref(storage, photo.storagePath));
-      }
       fetchPhotos();
       Swal.fire({ icon: "success", title: "Foto borrada", timer: 1200, showConfirmButton: false });
     } catch {
