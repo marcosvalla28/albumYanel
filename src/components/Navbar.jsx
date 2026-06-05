@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
 import logo from "../assets/logo/logo.png";
-
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom"
 
 export default function Navbar({ onLogin, onHome, onLogout }) {
   const [isOpen, setIsOpen] = useState(false);
+
+
+  const { user } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleKey = (e) => { if (e.key === "Escape") setIsOpen(false); };
@@ -75,7 +80,24 @@ export default function Navbar({ onLogin, onHome, onLogout }) {
               <span>→</span> Iniciar Sesión
             </button>
           </li>
+
+
+               {user && (
+        <li className={`border-b border-white/10 transition-all duration-300 ${isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-5"}`} style={{ transitionDelay: isOpen ? "200ms" : "0ms" }}>
+          <button 
+          onClick={() => handleAction(() => navigate("/admin"))}
+          className="flex items-center gap-3 w-full py-4 text-sm tracking-widest uppercase text-neutral-400 hover:text-[#aa7e35] transition-colors duration-200 text-left">
+            <span>⚙</span> Panel Admin
+          </button>
+        </li>
+      )}
+
+
+
+
         </ul>
+
+         
 
         {/* Cerrar sesión al fondo */}
         <div className={`px-6 pt-5 border-t border-white/10 transition-all duration-300 ${isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-5"}`} style={{ transitionDelay: isOpen ? "200ms" : "0ms" }}>

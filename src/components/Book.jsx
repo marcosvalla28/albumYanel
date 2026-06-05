@@ -1,3 +1,6 @@
+import {useState, useEffect} from "react";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { db } from "../config/firebase";
 import HTMLFlipBook from "react-pageflip";
 import BookPage from "./BookPage";
 import "../estilos/Album.css";
@@ -98,16 +101,37 @@ const width = Math.min(window.innerWidth * 0.8, 500);
 const height = width * 1.4;
 
 const Book = () => {
+  const [firebasePages, setFirebasePages] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchPhotos = async () => {
+      const q = query(collection(db, "photos"), orderBy("createdAt", "asc"));
+      const snapshot = await getDocs(q);
+      const fotos = snapshot.docs.map((d) => ({
+        id: d.id,
+        image: d.data().url,
+        text: d.data().descripcion || "",
+      }));
+      setFirebasePages(fotos);
+      setLoading(false);
+    };
+    fetchPhotos();
+  }, []);
+
+  const allPages = [...pages, ...firebasePages];
+
+  if (loading) return <div className="w-full min-h-screen fondoAlbum flex items-center justify-center text-white">Cargando...</div>;
   return (
-    <div className="w-full min-h-screen fondoAlbum flex items-center justify-center overflow-hidden p-4 ">
+    <div className="w-full min-h-screen fondoAlbum flex items-center justify-center overflow-hidden p-4">
       <HTMLFlipBook
         width={width}
         height={height}
         showCover={true}
         mobileScrollSupport={true}
-        className="shadow-2xl "
+        className="shadow-2xl"
       >
-        {pages.map((page) => (
+        {allPages.map((page) => (
           <BookPage
             key={page.id}
             image={page.image}
@@ -117,7 +141,6 @@ const Book = () => {
           />
         ))}
       </HTMLFlipBook>
-      
     </div>
   );
 };
