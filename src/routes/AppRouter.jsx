@@ -2,6 +2,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import Home from '../pages/Home'
 import AlbumBook from '../pages/AlbumBook'
 import Navbar from '../components/Navbar' // ajustá el path
+import Login from '../pages/Login';
 
 function Layout() {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ function Layout() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/album" element={<AlbumBook />} />
+        <Route path="/Login" element={<Login />} />
       </Routes>
     </>
   );

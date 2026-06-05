@@ -14,7 +14,7 @@
     "@tsparticles/react": "^4.1.2",
     "@tsparticles/slim": "^4.1.2",
     "date-fns": "^4.2.1",
-    "firebase": "^12.13.0",
+    "firebase": "^12.14.0",
     "framer-motion": "^12.39.0",
     "gsap": "^3.15.0",
     "howler": "^2.2.4",
@@ -24,6 +24,8 @@
     "react-pageflip": "^2.0.3",
     "react-photo-album": "^3.6.0",
     "react-router-dom": "^7.16.0",
+    "sweetalert2": "^11.26.25",
+    "sweetalert2-react-content": "^5.1.2",
     "yet-another-react-lightbox": "^3.32.0"
   },
   "devDependencies": {
