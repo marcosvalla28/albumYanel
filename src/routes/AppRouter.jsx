@@ -2,7 +2,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import Home from '../pages/Home'
 import AlbumBook from '../pages/AlbumBook'
 import Navbar from '../components/Navbar' 
-import Login from '../pages/Login';
+import Login from '../pages/login';
 import AdminPanel from '../pages/AdminPanel';
 import { signOut } from "firebase/auth";
 import { auth } from '../config/firebase';
