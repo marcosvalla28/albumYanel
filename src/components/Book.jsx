@@ -18,7 +18,7 @@ const pages = [
     id: 1,
     image:
       foto1,
-    text: " Entonces te das cuenta que no es quien te mueve el piso, sino quiente centra 💕",
+    text: " Entonces te das cuenta que no es quien te mueve el piso, sino quien te centra 💕",
   },
   {
     id: 2,

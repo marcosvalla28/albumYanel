@@ -55,16 +55,24 @@ const anterior = () => {
     };
  
     const onLoaded = () => setDuration(formatTime(audio.duration));
+
+    const onEnded = () => {
+    const next = (indexActual + 1) % canciones.length;
+    setIndexActual(next);
+    setTimeout(() => { audioRef.current.play(); setPlaying(true); }, 50);
+  };
  
     audio.addEventListener("timeupdate", onTimeUpdate);
     audio.addEventListener("loadedmetadata", onLoaded);
+    audio.addEventListener("ended", onEnded);
     audio.volume = volume;
  
     return () => {
       audio.removeEventListener("timeupdate", onTimeUpdate);
       audio.removeEventListener("loadedmetadata", onLoaded);
+      audio.removeEventListener("ended", onEnded);
     };
-  }, []);
+  }, [indexActual]);
  
   const togglePlay = () => {
     const audio = audioRef.current;
@@ -92,7 +100,7 @@ const anterior = () => {
  
   return (
     <>
-      <audio ref={audioRef} loop src={canciones[indexActual].src} />
+      <audio ref={audioRef}  src={canciones[indexActual].src} />
  
 {!visible && (
       <button
